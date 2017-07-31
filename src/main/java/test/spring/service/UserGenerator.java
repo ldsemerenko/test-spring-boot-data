@@ -3,14 +3,18 @@ package test.spring.service;
 import test.spring.Enum.Nationality;
 import test.spring.domain.Users;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 public class UserGenerator {
     public Users generateUser(){
         Users users = new Users();
-            users.setNationality(getRandNat());
+            users.setNationality(getRandNat().toString());
             users.setAge(getRandAge(18, 55));
             users.setSex(getRandSex());
             users.setPass(getRandPass(10));
-            users.setId(getUniqueId());
+            users.setUser_id(getUniqueId());
+            users.setRegistrationTime(new Timestamp(System.currentTimeMillis()));
         return users;
     }
 

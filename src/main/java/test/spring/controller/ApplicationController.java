@@ -9,6 +9,9 @@ import test.spring.repository.UsersRepository;
 import test.spring.service.AppState;
 import test.spring.service.UserGenerator;
 
+import java.sql.Timestamp;
+import java.util.List;
+
 @Controller
 public class ApplicationController {
 
@@ -21,7 +24,6 @@ public class ApplicationController {
     @RequestMapping("/getAppState")
     @ResponseBody
     String getAppState(){
-
         return String.valueOf(appState.getState());
     }
 
@@ -31,7 +33,6 @@ public class ApplicationController {
         UserGenerator userGenerator = new UserGenerator();
         Users users =  userGenerator.generateUser();
         usersRepository.save(users);
-        System.out.println(users.toString());
         return users.toString();
     }
 }

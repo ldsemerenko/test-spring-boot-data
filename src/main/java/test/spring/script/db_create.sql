@@ -12,7 +12,23 @@ CREATE TABLE test_s.users(
   id BIGINT PRIMARY KEY DEFAULT nextval('test_s.users_id_seq'),
   user_id BIGINT,
   pass TEXT,
-  age int,
+  age INT,
   sex TEXT,
-  nationality TEXT
+  nationality TEXT,
+  registration_time TIMESTAMP
+);
+-------------------------------------------
+CREATE SEQUENCE test_s.statistic_id_seq;
+-------------------------------------------
+CREATE TABLE test_s.statistic(
+  id BIGINT PRIMARY KEY DEFAULT nextval('test_s.statistic_id_seq'),
+  user_count_per_min INT,
+  male_count INT,
+  female_count INT,
+  avg_age INT,
+  ua_count INT,
+  gb_count INT,
+  ca_count INT,
+  by_count INT,
+  hn_count INT
 );
