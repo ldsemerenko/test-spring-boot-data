@@ -48,7 +48,7 @@ public class StatProc {
         Statistic statistic = new Statistic();
         statistic.setUser_count_per_min(user_count_per_min);
 
-        statistic.setAvg_age(sum_avg_age / user_count_per_min == 0 ? 1 : user_count_per_min);
+        statistic.setAvg_age(sum_avg_age / (user_count_per_min == 0 ? 1 : user_count_per_min));
         statistic.setMale_count(male_count);
         statistic.setFemale_count(female_count);
         statistic.setBy_count(by_count);

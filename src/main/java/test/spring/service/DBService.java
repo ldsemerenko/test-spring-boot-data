@@ -1,21 +1,21 @@
 package test.spring.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import test.spring.repository.StatisticRepository;
 import test.spring.repository.UsersRepository;
 
-@Service("DBService")
+@Service
 public class DBService {
 
-    @Autowired
-    UsersRepository usersRepository;
+    private final UsersRepository usersRepository;
 
-    @Autowired
-    StatisticRepository statisticRepository;
+    private final StatisticRepository statisticRepository;
 
-    public void clearDB(){
-        usersRepository.deleteAll();
-        statisticRepository.deleteAll();
+    public DBService(UsersRepository usersRepository, StatisticRepository statisticRepository) {
+        this.usersRepository = usersRepository;
+        this.statisticRepository = statisticRepository;
+
+        this.usersRepository.deleteAll();
+        this.statisticRepository.deleteAll();
     }
 }

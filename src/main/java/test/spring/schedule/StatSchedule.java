@@ -23,5 +23,4 @@ public class StatSchedule {
         statProc.writeStat();
         usersRepository.delete(usersRepository.findByRegistrationTimeBefore(new Timestamp(System.currentTimeMillis() - 120000)));
     }
-
 }

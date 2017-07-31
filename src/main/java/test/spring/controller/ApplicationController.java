@@ -3,6 +3,8 @@ package test.spring.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import test.spring.domain.Users;
 import test.spring.repository.UsersRepository;
@@ -21,13 +23,13 @@ public class ApplicationController {
     @Autowired
     UsersRepository usersRepository;
 
-    @RequestMapping("/getAppState")
+    @RequestMapping(value = "/getAppState", method = { RequestMethod.GET })
     @ResponseBody
     String getAppState(){
         return String.valueOf(appState.getState());
     }
 
-    @RequestMapping("/getRandUser")
+    @RequestMapping(value = "/getRandUser", method = { RequestMethod.GET })
     @ResponseBody
     String getRandUser(){
         UserGenerator userGenerator = new UserGenerator();
