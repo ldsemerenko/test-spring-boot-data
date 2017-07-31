@@ -10,12 +10,9 @@ CREATE SEQUENCE test_s.users_id_seq;
 -------------------------------------------
 CREATE TABLE test_s.users(
   id BIGINT PRIMARY KEY DEFAULT nextval('test_s.users_id_seq'),
+  user_id BIGINT,
   pass TEXT,
   age int,
   sex TEXT,
   nationality TEXT
 );
-
-/*
-случайными не
-числовым идентификатором(не могут повторяться), паролем, возрастом, полом, национальностью*/

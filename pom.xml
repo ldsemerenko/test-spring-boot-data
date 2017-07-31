@@ -6,8 +6,20 @@
 
     <groupId>test-spring-boot-data</groupId>
     <artifactId>test-spring-boot-data</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
+    <developers>
+        <developer>
+        <id>ldsemerenko</id>
+        <name>Leonid Semerenko</name>
+        <organization>Cygnati</organization>
+        <organizationUrl>http://cygnati.com/</organizationUrl>
+        <roles>
+            <role>developer</role>
+        </roles>
+        <timezone>+3</timezone>
+        </developer>
+    </developers>
 
     <parent>
         <groupId>org.springframework.boot</groupId>

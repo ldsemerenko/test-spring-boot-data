@@ -1,4 +1,7 @@
 package test.spring.repository;
 
-public class usersRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import test.spring.domain.Users;
+
+public interface UsersRepository extends JpaRepository<Users, Long>{
 }
